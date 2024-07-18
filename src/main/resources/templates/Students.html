@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Grades</title>
+    <link rel="stylesheet" type="text/css" data-th-href="@{css/output.css}"/>
+</head>
+<body class="bg-gray-900">
+    <div class="w-32 p-2 bg-green-700 text-white font-bold m-auto text-center mt-16">
+        <a data-th-href="@{/}">Home</a>
+    </div>
+    <div class="bg-white p-2 mt-28 w-1/2 m-auto">
+        <table class="bg-white p-2 w-full m-auto">
+            <tr>
+                <td class="w-28 bg-gray-800 text-white border-r-2 p-1 font-bold">Student</td>
+                <td class="w-28 bg-gray-800 text-white border-r-2 p-1 font-bold">Subject</td>
+                <td class="w-28 bg-gray-800 text-white border-r-2 p-1 font-bold">Grade</td>
+                <td class="w-28 bg-gray-800 text-white  p-1 font-bold">Edit</td>
+            </tr>
+            <tr class="pt-3" th:each="allstudents : ${allstudents}">
+                <td class="" th:text="${allstudents.student}"></td>
+                <td class="" th:text="${allstudents.subject}"></td>
+                <td class="" th:text="${allstudents.marks}"></td>
+                <td class="">
+                    <button class=" bg-green-800 hover:bg-green-600 text-white  p-1  w-full rounded-lg">Update</button>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+   
+    <div class="addbutton w-28 m-auto mt-10 ">
+        <button  class=" bg-blue-900 text-white p-2 rounded-md hover:bg-blue-700">ADD MORE</button>
+    </div>
+</body>
+</html>
